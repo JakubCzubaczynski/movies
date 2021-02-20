@@ -7,8 +7,7 @@ const displayCategorySlider = async (cond, url) => {
   const imagePath = `https://image.tmdb.org/t/p/w220_and_h330_face`;
 
   const wrapper = document.querySelector(`.${cond} .slider-section-wrapper`);
-  console.log(cond);
-  console.log(wrapper);
+
   data.results.map((item) => {
     wrapper.innerHTML += `
     <div data-id='${item.id}' class="item ${cond}">

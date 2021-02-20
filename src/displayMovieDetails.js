@@ -12,8 +12,7 @@ const displayMovieDetails = async (id, element) => {
   [data].map((item) => {
     element.style.background = `url(${backgroundPath}${item.backdrop_path})`;
     element.innerHTML += `<div class="details-overlay"></div>`;
-    const newElement = document.querySelector('.details-overlay');
-    newElement.innerHTML += `
+    $('.details-overlay').html(`
     
     <div class='details-img-wrapper'>
         <img class='details-img' src='${posterPath}${item.poster_path}'>
@@ -38,21 +37,16 @@ const displayMovieDetails = async (id, element) => {
         <p class='details-description'>${item.overview}</p>
         <span class='details-close'><i class="far fa-times-circle"></i></span>
     </div>
-    `;
+    `);
   });
   document.querySelector('.details-wrapper').scrollIntoView();
-  const isOnWatchlist = window.localStorage.getItem(id);
 
-  const closeBtn = document.querySelector('.details-close');
-  closeBtn.addEventListener('click', () => {
-    document.querySelector('.details-wrapper').remove();
+  $('.details-close').on('click', function () {
+    $('.details-wrapper').remove();
   });
-  const bookmark = document.querySelector('.bookmark');
-  if (isOnWatchlist) {
-    bookmark.style.color = 'black';
-  }
-  bookmark.addEventListener('click', () => {
-    bookmark.style.color = 'black';
+
+  $('.bookmark').on('click', function () {
+    $(this).css('color', 'black');
     addToWatchList(id);
   });
 };

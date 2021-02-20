@@ -7,8 +7,6 @@ const displayActorDetails = async (id, element) => {
 
   const data = await getData(urlPerson);
 
-  console.log(data);
-
   element.innerHTML += `<div class="details-overlay"></div>`;
   const newElement = document.querySelector('.details-overlay');
   newElement.innerHTML += `
@@ -28,9 +26,12 @@ const displayActorDetails = async (id, element) => {
 
   document.querySelector('.details-wrapper').scrollIntoView();
 
-  const closeBtn = document.querySelector('.details-close');
-  closeBtn.addEventListener('click', () => {
-    document.querySelector('.details-wrapper').remove();
+  $('.details-close').on('click', function () {
+    $('.details-wrapper').remove();
   });
+  // const closeBtn = document.querySelector('.details-close');
+  // closeBtn.addEventListener('click', () => {
+  //   document.querySelector('.details-wrapper').remove();
+  // });
 };
 export default displayActorDetails;

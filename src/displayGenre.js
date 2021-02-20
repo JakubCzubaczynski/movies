@@ -2,13 +2,11 @@ import getData from './getData.js';
 import categorySliderUtils from './categorySliderUtils.js';
 const displayGenre = () => {
   // conditionally displaying genres
-  const genreWrapper = [...document.querySelectorAll('.genre')];
   const key = '25141123a6896a890d381900b61e2af6';
   let url = '';
   let text = '';
-  const displayGenreSlide = async (id) => {
-    const key = '25141123a6896a890d381900b61e2af6';
 
+  const displayGenreSlide = async (id) => {
     const imagePath = `https://image.tmdb.org/t/p/w220_and_h330_face`;
     switch (id) {
       case '16':
@@ -36,43 +34,56 @@ const displayGenre = () => {
         text = 'fantasy';
         break;
     }
-    console.log(url);
     const data = await getData(url);
     const wrapper = document.querySelector(
       `.single-genre .slider-section-wrapper`
     );
-    const container = document.querySelector(`.single-genre.container`);
-    document.querySelector('.single-genre .section-title').innerHTML = text;
-    container.classList.remove('hide');
-    container.style.animation = 'fadein 1s linear';
-    container.scrollIntoView();
-    console.log(wrapper);
+
     data.results.map((item) => {
       wrapper.innerHTML += `
-    <div data-id='${item.id}' class="item single-genre">
-    <img class="item-img" src='${imagePath + item.poster_path}' alt=''>
+      <div data-id='${item.id}' class="item single-genre">
+      <img class="item-img" src='${imagePath + item.poster_path}' alt=''>
+      
+      <p class="item-vote-label"><i class="fas fa-star"></i>${
+        item.vote_average
+      }</p>
+      <p class="item-title-label">${item.title}</p>
+      <p class="item-release-label">${item.release_date}</p>
+      
+      </div>
+      `;
 
-    <p class="item-vote-label"><i class="fas fa-star"></i>${
-      item.vote_average
-    }</p>
-    <p class="item-title-label">${item.title}</p>
-    <p class="item-release-label">${item.release_date}</p>
+      const container = document.querySelector(`.single-genre.container`);
 
-    </div>
-    `;
+      $('.single-genre .section-title').html(text);
+      $(`.single-genre`).css('animation', 'fadein 0.5s linear');
+
+      $(`.single-genre.container`).removeClass('hide');
+      container.scrollIntoView();
     });
 
     categorySliderUtils('single-genre');
   };
-  genreWrapper.map((item) => {
-    const id = item.getAttribute('data-genre');
 
-    item.addEventListener('click', () => {
+  $('.genre').each(function () {
+    const id = $(this).attr('data-genre');
+    $(this).on('click', function () {
+      $(`.single-genre .slider-section-wrapper`).html(' ');
+      $('.details-wrapper').hide();
       displayGenreSlide(id);
-      document.querySelector(
-        `.single-genre .slider-section-wrapper`
-      ).innerHTML = ''; // RESET SLIDER CONTENT
     });
   });
 };
 export default displayGenre;
+
+// JS
+// genreWrapper.map((item) => {
+//   const id = item.getAttribute('data-genre');
+
+//   item.addEventListener('click', () => {
+//     document.querySelector(
+//       `.single-genre .slider-section-wrapper`
+//     ).innerHTML = ''; // RESET SLIDER CONTENT
+//     displayGenreSlide(id);
+//   });
+// });

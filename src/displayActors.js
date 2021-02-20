@@ -8,8 +8,6 @@ const displayActors = async () => {
 
   const wrapper = document.querySelector(`.actors .slider-section-wrapper`);
 
-  console.log(wrapper);
-
   data.results.map((item) => {
     if (item.profile_path != null) {
       wrapper.innerHTML += `
