@@ -10,7 +10,7 @@ const asideMenu = () => {
     $('.menu-close').on('click', function () {
       $('.aside-menu').removeClass('animation-in');
       $('.aside-menu').addClass('animation-out');
-      $('.aside-menu').css('top', '-100%');
+      $('.aside-menu').css('top', '-200%');
       //   $('.ul-menu').css('display', 'none');
     });
     $('.fa-angle-up').on('click', function () {

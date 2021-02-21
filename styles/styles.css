@@ -743,7 +743,7 @@ footer h3:after {
 
 @keyframes menu-in {
   0% {
-    top: -100%;
+    top: -200%;
   }
   100% {
     top: 0;
@@ -755,12 +755,13 @@ footer h3:after {
     top: 0;
   }
   100% {
-    top: -100%;
+    top: -200%;
   }
 }
 
 .aside-sign {
   position: fixed;
+  display: none;
   top: 0;
   z-index: 5;
   height: 100vh;

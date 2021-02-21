@@ -2,6 +2,7 @@
 @import './variables';
 .aside-sign{
     position:fixed;
+    display: none;
     top:0;
     z-index:5;
     height:100vh;
