@@ -1,0 +1,25 @@
+@import './variables';
+@import './variables';
+.aside-sign{
+    position:fixed;
+    top:0;
+    z-index:5;
+    height:100vh;
+    width:100%;
+    background: #1f1f1f;
+    .sign-container{
+        margin:0 auto;
+        max-width:$max-width-menu;
+        @include flexCenter;
+        height:70%;
+        position:relative;
+        .sign-close{
+            position: absolute;
+            top:1rem;
+            right:0;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}

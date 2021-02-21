@@ -1,0 +1,8 @@
+$radius:5px;
+$max-width-menu:1000px;
+$color-primary:#1761a0;
+@mixin flexCenter{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

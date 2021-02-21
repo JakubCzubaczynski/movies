@@ -1,0 +1,151 @@
+@import './variables';
+@import './media';
+ .animation-in {
+     animation: menu-in 0.5s linear;
+}
+ .animation-out {
+     animation: menu-out 0.5s linear;
+ }
+ .show{
+     display: block!important;
+ }
+ .hidden{
+     display: none!important;
+ }
+.aside-menu{
+    height:100vh;
+    width:100%;
+    background-color: #1f1f1f;
+    position:fixed;
+    z-index:4;
+    display: none;
+    overflow: auto;
+    padding:0 1rem;
+    // top:-100%;
+   
+    .menu-header{
+        max-width:$max-width-menu;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin:30px auto;
+        
+        img{
+                height: 60px;
+                border-radius: 5px;
+        }
+        i{
+            color:$color-primary;
+            &:hover{
+                cursor:pointer;
+            }
+        }
+    }
+    .aside-wrapper{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr ;
+        max-width: $max-width-menu;
+        margin:0 auto;
+        @media only screen and (max-width: 678px) {
+            grid-template-columns: 1fr ;
+            grid-template-rows: auto;
+            padding-top:2rem;
+        }
+        .menu-section-wrapper{
+            position: relative;
+            padding:1rem 0.5rem;
+            @media only screen and (max-width: 678px) {
+                &:hover{
+                    background: rgb(59, 59, 59);
+                    cursor: pointer;
+                    i{
+                        color:$color-primary;
+                    }
+                }
+
+            }
+            .fa-angle-down{
+                position:absolute;
+                top:1rem;
+                right:0;
+                transform: translate(0,-50%);
+                display: none;
+                @media only screen and (max-width: 678px) {
+                    display: block;
+                    font-size: 2rem;
+                    
+                }
+            }
+            .fa-angle-up{
+                position:absolute;
+                top:1rem;
+                right:0;
+                transform: translate(0, -50%);
+                display: none;
+
+                @media only screen and (max-width: 678px) {
+                    font-size: 2rem;
+                display:none;
+                }
+            }
+            .ul-menu{
+                margin-left:2.5rem;
+                padding:0;
+                display: block;
+                list-style-type:none;
+                text-transform: capitalize;
+                font-size: 0.9rem;
+                font-weight: 500;
+                    animation: 0.5s linear 0s 1 normal none running fadein;
+                @media only screen and (max-width: 678px) {
+                    display:none;
+                   
+                }
+                li{
+                    margin-top:0.8rem;
+                    &:hover{
+                        text-decoration: underline wavy $color-primary;
+                        cursor:pointer;
+                    }
+                }
+            }
+            .menu-title{
+                text-transform: capitalize;
+                font-size:1.5rem;
+                font-weight: 500;
+                margin:0;
+                 @media only screen and (max-width: 678px) {
+                    font-size:1.1rem;
+                   
+                 }
+                }
+                i{
+                    margin-right:1rem;
+                    color:$color-primary;
+                    @media only screen and (max-width: 678px) {
+                        color:#fff;
+                      
+                    }
+                }
+            }
+        }
+    }
+@keyframes menu-in {
+    0% {
+        top:-100%;
+    }
+
+    100% {
+        top:0;
+    }
+}
+@keyframes menu-out {
+    0% {
+        top: 0
+    }
+
+    100% {
+        top: -100%;
+    }
+}

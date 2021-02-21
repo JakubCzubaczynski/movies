@@ -5,9 +5,20 @@ const displayMovieDetails = async (id, element) => {
   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${key}&language=en-US`;
   const backgroundPath = `https://image.tmdb.org/t/p/w1920_and_h800_multi_faces`;
   const posterPath = `https://image.tmdb.org/t/p/w600_and_h900_bestv2`;
-
-  //    const data = await getData(url);
   const data = await getData(url);
+
+  function checkForBookmarks() {
+    const storage = JSON.parse(localStorage.getItem('watchlist'));
+    const id = $('.bookmark').attr('data-bookmark-id');
+    if (storage) {
+      storage.map((item) => {
+        if (item.id === parseInt(id)) {
+          console.log('pasuje');
+          $('.bookmark').css('color', 'black');
+        }
+      });
+    }
+  }
 
   [data].map((item) => {
     element.style.background = `url(${backgroundPath}${item.backdrop_path})`;
@@ -44,6 +55,8 @@ const displayMovieDetails = async (id, element) => {
   $('.details-close').on('click', function () {
     $('.details-wrapper').remove();
   });
+
+  checkForBookmarks();
 
   $('.bookmark').on('click', function () {
     $(this).css('color', 'black');

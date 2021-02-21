@@ -1,0 +1,39 @@
+@import './variables';
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1250px;
+    }
+
+    .item {
+        min-width: 12.5% !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .item {
+        min-width: 25% !important;
+    }
+
+    .slider-section-wrapper {
+        overflow-x: auto !important;
+    }
+    .prev-icon,.next-icon{
+        display:none;
+    }
+    .item-img{
+        width:150px;
+        display: block;
+        margin:0 auto;
+    }
+    
+}
+
+@media only screen and (max-width: 400px) {
+    .item {
+        min-width: 40% !important;
+    }
+    .item-title-label{
+        font-size:0.7rem!important;
+    }
+}

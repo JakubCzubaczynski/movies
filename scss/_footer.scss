@@ -1,0 +1,47 @@
+@import './variables';
+@import './media';
+    footer {
+        margin-top: 100px;
+        padding:1rem;
+        p {
+            margin: 0;
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 0.8rem;
+            background: #0e0e0e;
+        }
+
+        background: #161616;
+
+        ul {
+            list-style-type: none;
+            padding: 0%;
+            margin-top: 2rem;
+
+            li {
+                margin: 0.5rem 0;
+            }
+
+            i {
+                margin-right: 10px;
+                color: #1761a0;
+            }
+        }
+
+        h3 {
+            padding: 5px 0;
+            position: relative;
+
+            &:after {
+                position: absolute;
+                content: "";
+                height: 3px;
+                width: 100px;
+                margin: 0 auto;
+                background-color: #1761a0;
+                bottom: 30px;
+                left: 0;
+                bottom: 0;
+            }
+        }
+    }

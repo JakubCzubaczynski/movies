@@ -34,7 +34,7 @@
 
             <div class="watchlist-wrapper">
                 <i class="fas fa-bookmark"></i>
-                <span>Watchlist</span>
+                <span><a href='#watchlist'>Watchlist</a></span>
             </div>
 
             <div class="signin-wrapper">
@@ -43,6 +43,126 @@
             </div>
         </div>
     </nav>
+    <aside class="aside-sign">
+        
+        <div class="sign-container">
+            <i class="far fa-times-circle fa-3x sign-close"></i>
+             <form id="on-key" class="form-sign sign-up m-2 key-up">
+                        <h4>Sign up</h4>
+                        <div>
+                            <div class="form-wrapper ">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control " name="username" 
+                                    placeholder="Username">
+                                <i class="fas fa-times error"></i>
+                                <i class="fas fa-check success"></i>
+                                <small>Error message</small>
+                            </div>
+                            <div class="form-wrapper">
+                                <label for="E-mail">E-mail</label>
+                                <input type="email" class="form-control" name="email" placeholder="E-mail">
+                                <i class="fas fa-times error"></i>
+                                <i class="fas fa-check success"></i>
+                                <small>Error message</small>
+                            </div>
+                            <div class="form-wrapper">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" placeholder="Password">
+                                <i class="fas fa-times error"></i>
+                                <i class="fas fa-check success"></i>
+                                <small>Error message</small>
+                            </div>
+                            <div class="form-wrapper">
+                                <label for="password-confirm">Confirm password</label>
+                                <input type="password" class="form-control" name="password-confirm"
+                                    placeholder="Confirm password">
+                                <i class="fas fa-times error"></i>
+                                <i class="fas fa-check success"></i>
+                                <small>Error message</small>
+                            </div>
+
+                            <input type="submit" value="Sign Up" class="submit-btn">
+                        </div>
+
+                    </form>
+
+        </div>
+    </aside>
+    <aside class="aside-menu">
+        <div class="menu-header">
+            <img src="./images/logo-db-2.png" class="logo" alt="logo">
+            <i class="far fa-times-circle fa-3x menu-close"></i>
+        </div>
+        <div class="aside-wrapper">
+            <div class="menu-section-wrapper">
+               <i class="fas fa-angle-down"></i>
+               <i class="fas fa-angle-up"></i>
+                <p class="menu-title"><i class="fas fa-film"></i>movies</p>
+                <ul class='ul-menu'>
+                    <li>Release Calendar</li>
+                    <li>DVD & Blu-ray Releases</li>
+                    <li>Top rated movies</li>
+                    <li>most popular movies</li>
+                    <li>browse movies by genre</li>
+                    <li>top box office</li>
+                    <li>in theaters</li>
+                    <li>coming soon</li>
+                </ul>
+            </div>
+            <div class="menu-section-wrapper">
+                <i class="fas fa-angle-down"></i>
+                <i class="fas fa-angle-up"></i>
+                <p class="menu-title"><i class="fas fa-tv"></i>tv series</p>
+                <ul class='ul-menu'>
+                    <li>what's on tv</li>
+                    <li>top rated shows</li>
+                    <li>most popular shows</li>
+                    <li>browse tv shows by genre</li>
+                    <li>tv news</li>
+                    <li>india tv spotlight</li>
+                </ul>
+            </div>
+          
+            <div class="menu-section-wrapper">
+                <i class="fas fa-angle-down"></i>
+                <i class="fas fa-angle-up"></i>
+                <p class="menu-title"><i class="fas fa-crown"></i>awards & events</p>
+                <ul class='ul-menu'>
+                    <li>oscars</li>
+                    <li>best picture winners</li>
+                    <li>golden globes</li>
+
+                    <li>black history month</li>
+                    <li>all events</li>
+                    <li>festival central</li>
+                    <li>awards center</li>
+                    <li>new york comic-con</li>
+                </ul>
+            </div>
+            <div class="menu-section-wrapper">
+              <i class="fas fa-angle-down"></i>
+              <i class="fas fa-angle-up"></i>
+               <p class="menu-title"><i class="far fa-play-circle"></i>watch</p>
+               <ul class='ul-menu'>
+                   <li>what to watch</li>
+                   <li>latest trailers</li>
+                   <li>originals</li>
+                   <li>picks</li>
+                   <li>podcasts</li>
+               </ul>
+           </div>
+  <div class="menu-section-wrapper">
+      <i class="fas fa-angle-down"></i>
+      <i class="fas fa-angle-up"></i>
+                <p class="menu-title"><i class="fas fa-user-friends"></i>celebs</p>
+                <ul class='ul-menu'>
+                    <li>born today</li>
+                    <li>most popular</li>
+                    <li>celebrity news</li>
+                </ul>
+            </div>
+        </div>
+    </aside>
     <section class="slider container-fluid mt-4">
         <div class="container slider-wrapper d-flex">
             <i class="fas prev-icon fa-caret-left"></i>
@@ -69,7 +189,16 @@
         </div>
 
     </section>
-
+<section id="watchlist" class="watchlist container">
+     <p class="section-title"><span class="title-element"></span>Watch List</p>
+        <div class="slider-section">
+            <i class="fas prev-icon prev-icon-element fa-caret-left"></i>
+            <i class="fas next-icon next-icon-element fa-caret-right"></i>
+            <div class="watchlist slider-section-wrapper">
+<h2>List is empty...</h2>
+            </div>
+        </div>
+</section>
     <section class="discover container">
         <p class="section-title"><span class="title-element"></span>Discover movies</p>
         <div class="slider-section">
@@ -116,27 +245,27 @@
 <section class="genres container py-5">
      <p class="section-title"><span class="title-element"></span>Genres</p>
     <div class="row mx-0">
-        <div class="col-6 col-lg-4 genre" data-genre="16">
+        <div class="col-12 col-sm-6 col-lg-4 genre" data-genre="16">
             <img src='./images/genres-animation.jpg' class="genre-img"/>
             <p class="genre-title">animation</p>
         </div>
-        <div class="col-6 col-lg-4 genre" data-genre="27">
+        <div class="col-12 col-sm-6  col-lg-4 genre" data-genre="27">
             <img src='./images/genres-horror.jpg' class="genre-img"/>
             <p class="genre-title">horror</p>
         </div>
-        <div class="col-6 col-lg-4 genre"  data-genre="878">
+        <div class="col-12 col-sm-6 col-lg-4 genre"  data-genre="878">
             <img src='./images/genres-sci-fi.jpg' class="genre-img"/>
             <p class="genre-title">sci-fi</p>
         </div>
-        <div class="col-6 col-lg-4 genre" data-genre="10749">
+        <div class="col-12 col-sm-6 col-lg-4 genre" data-genre="10749">
             <img src='./images/genres-romance.jpg' class="genre-img"/>
             <p class="genre-title">romance</p>
         </div>
-        <div class="col-6 col-lg-4 genre" data-genre="14">
+        <div class="col-12 col-sm-6 col-lg-4 genre" data-genre="14">
             <img src='./images/genres-fantasy.jpg' class="genre-img"/>
             <p class="genre-title">fantasy</p>
         </div>
-        <div class="col-6 col-lg-4 genre" data-genre="35">
+        <div class="col-12 col-sm-6 col-lg-4 genre" data-genre="35">
             <img src='./images/genres-comedy.jpg' class="genre-img"/>
             <p class="genre-title">comedy</p>
         </div>

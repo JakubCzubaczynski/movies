@@ -1,0 +1,112 @@
+   @import './variables';
+   @import './media';
+   .details-wrapper {
+        width: 100%;
+        height: 400px;
+        border-radius: $radius;
+        margin-bottom: 1rem;
+        animation: fadein 1s linear;
+        border-radius: $radius;
+
+        .details-overlay {
+            position: relative;
+            color: var(--clr-light);
+            border-radius: $radius;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+            background-image: linear-gradient(to right, rgba(3.92%, 7.45%, 7.45%, 1.00) 150px, rgba(3.92%, 7.45%, 7.45%, 0.84) 100%);
+
+            .details-img-wrapper {
+                width: 30%;
+
+
+                .details-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: $radius;
+                }
+            }
+
+            .details-info-wrapper {
+                width: 70%;
+                padding: 0 0 1rem 1rem;
+                position: relative;
+
+                .fa-bookmark {
+                    position: absolute;
+                    color: orange;
+                    top: 60px;
+                    right: 5px;
+
+
+                    &:hover {
+                        color: rgb(252, 255, 45);
+                        cursor: pointer;
+                    }
+                }
+
+                p {
+                    margin-top: 10px;
+                }
+
+
+                .details-title {
+                    font-size: 2rem;
+                    font-weight: 600;
+
+                }
+
+                .details-date {
+                    font-size: 0.9rem;
+
+                }
+
+                .details-countries {
+                    margin-left: 1rem;
+                }
+
+                .details-genres {
+                    text-transform: uppercase;
+
+                    font-size: 1.1rem;
+
+                    .fa-dot-circle {
+                        font-size: 0.8rem;
+                        margin-top: 10px;
+                    }
+                }
+
+                .details-popularity {
+                    margin-top: 10px;
+                }
+
+                .details-description {
+                    margin-top: 20px;
+                    max-height: 200px;
+                    overflow: auto;
+                }
+
+                .details-tagline {
+                    margin-top: 10px;
+                    font-style: italic;
+                    font-size: 0.9rem;
+                }
+
+                .details-close {
+                    position: absolute;
+                    top: 0;
+                    font-size: 2rem;
+                    right: 0;
+                    color: var(--clr-light);
+
+                    &:hover {
+                        cursor: pointer;
+                        color: var(--clr-main);
+                    }
+                }
+            }
+        }
+    }

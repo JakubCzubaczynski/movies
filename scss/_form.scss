@@ -1,0 +1,83 @@
+@import './variables';
+
+
+
+
+
+    .first-form {
+        height: 100vh;
+    }
+
+    .sign-up {
+        min-width:50%;
+    }
+
+    .form-sign {
+        color: black;
+        border-radius: 5px;
+        background-color: #ffff;
+        padding: 20px 40px 20px 40px;
+        display: inline-block;
+
+        .input-success {
+            border: 2px solid rgb(73, 146, 73);
+        }
+
+        .input-error {
+            border: 2px solid rgb(148, 64, 64);
+        }
+
+
+        .form-wrapper {
+            position: relative;
+
+            small {
+                visibility: hidden;
+            }
+
+            .error {
+                visibility: hidden;
+                position: absolute;
+                right: 5px;
+                top: 44px;
+            }
+
+            .success {
+                visibility: hidden;
+                position: absolute;
+                right: 5px;
+                top: 44px;
+            }
+
+            .i-success {
+                color: rgb(73, 146, 73);
+                visibility: visible;
+            }
+
+            .i-error {
+                color: rgb(148, 64, 64);
+                visibility: visible;
+            }
+
+            .error-message {
+                color: rgb(148, 64, 64);
+                visibility: visible;
+            }
+
+        }
+
+        h4 {
+            text-align: center;
+        }
+
+        .submit-btn {
+            color: #ffff;
+            background-color: $color-primary;
+            width: 100%;
+            border: none;
+            margin: 20px 0 20px 0;
+            padding: 10px 20px 10px 20px;
+            border-radius: 5px;
+        }
+    }
+

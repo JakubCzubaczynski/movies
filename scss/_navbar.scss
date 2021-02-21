@@ -1,0 +1,77 @@
+@import './variables';
+@import './media';
+
+    .navbar {
+        font-family: 'Bebas Neue', cursive;
+        font-size: 1.2rem;
+        letter-spacing: 0.1rem;
+        color: var(--clr-light);
+        background: rgb(22, 22, 22);
+
+        .navbar-wrapper {
+            padding: 0;
+
+            .logo {
+                height: 50px;
+                border-radius: $radius;
+            }
+
+            .menu-wrapper {
+                padding: var(--padding-navbar);
+                border-radius: $radius;
+
+                &:hover {
+                    background: rgb(49, 49, 49);
+                    cursor: pointer;
+                }
+            }
+
+            .search-wrapper {
+                padding: var(--padding-navbar);
+                border-radius: $radius;
+
+                form {
+                    position: relative;
+
+                    input {
+
+                        height: 35px;
+                        border-radius: $radius;
+                    }
+
+                    i {
+                        color: var(--clr-dark);
+                        position: absolute;
+                        right: 0.4rem;
+                        top: 0.5rem;
+                        cursor: pointer;
+                    }
+                }
+
+            }
+
+            .watchlist-wrapper {
+                padding: var(--padding-navbar);
+                border-radius: $radius;
+
+                &:hover {
+                    background: rgb(49, 49, 49);
+                    cursor: pointer;
+                }
+                a{
+                    text-decoration: none;
+                    color:var(--clr-light);
+                }
+            }
+
+            .signin-wrapper {
+                padding: var(--padding-navbar);
+                border-radius: $radius;
+
+                &:hover {
+                    background: rgb(49, 49, 49);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
