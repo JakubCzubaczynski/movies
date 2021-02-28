@@ -1,20 +1,26 @@
 import getData from './getData.js';
+import bookmarkUtils from './bookmarkUtils.js';
 import addToWatchList from './addToWatchList.js';
+import removeFromWatchlist from './removeFromWatchlist.js';
+
 const displayMovieDetails = async (id, element) => {
   const key = '25141123a6896a890d381900b61e2af6';
   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${key}&language=en-US`;
+  console.log(url);
   const backgroundPath = `https://image.tmdb.org/t/p/w1920_and_h800_multi_faces`;
   const posterPath = `https://image.tmdb.org/t/p/w600_and_h900_bestv2`;
   const data = await getData(url);
 
   function checkForBookmarks() {
+    console.log('check');
     const storage = JSON.parse(localStorage.getItem('watchlist'));
     const id = $('.bookmark').attr('data-bookmark-id');
     if (storage) {
       storage.map((item) => {
         if (item.id === parseInt(id)) {
           console.log('pasuje');
-          $('.bookmark').css('color', 'black');
+          $('.bookmark').removeClass('bookmark-on');
+          $('.bookmark').addClass('bookmark-off');
         }
       });
     }
@@ -29,7 +35,9 @@ const displayMovieDetails = async (id, element) => {
         <img class='details-img' src='${posterPath}${item.poster_path}'>
     </div>
     <div class='details-info-wrapper'>
-    <i class="far fa-bookmark bookmark fa-2x" data-bookmark-id='${item.id}'></i>
+    <i class="far fa-bookmark bookmark bookmark-on fa-2x" data-bookmark-id='${
+      item.id
+    }'></i>
        <p class='details-title'>${item.original_title}</p>
        <p class='details-date'>${
          item.release_date
@@ -57,10 +65,17 @@ const displayMovieDetails = async (id, element) => {
   });
 
   checkForBookmarks();
-
-  $('.bookmark').on('click', function () {
-    $(this).css('color', 'black');
-    addToWatchList(id);
-  });
+  bookmarkUtils();
+  // $('.bookmark-on').on('click', function () {
+  //   $(this).removeClass('bookmark-on');
+  //   $(this).addClass('bookmark-off');
+  //   addToWatchList(id);
+  // });
+  // $('.bookmark-off').on('click', function () {
+  //   console.log('teraz powinno usunac z listy');
+  //   $(this).removeClass('bookmark-off');
+  //   $(this).addClass('bookmark-on');
+  //   removeFromWatchlist(id);
+  // });
 };
 export default displayMovieDetails;

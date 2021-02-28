@@ -221,7 +221,6 @@
 
 .details-wrapper .details-overlay .details-info-wrapper .fa-bookmark {
   position: absolute;
-  color: orange;
   top: 60px;
   right: 5px;
 }
@@ -864,6 +863,25 @@ footer h3:after {
   border-radius: 5px;
 }
 
+.notification {
+  position: fixed;
+  top: 3rem;
+  left: 50%;
+  z-index: 4;
+  transform: translate(-50%, 0);
+  display: none;
+}
+
+.notification .notification-wrapper {
+  background: #007bff;
+  padding: 20px;
+  border-radius: 0.5rem;
+}
+
+.notification .notification-wrapper p {
+  margin: 0;
+}
+
 :root {
   --clr-light: rgb(240, 240, 240);
   --clr-dark: #0e0e0e;
@@ -889,6 +907,14 @@ body .row {
 
 body .hide {
   display: none !important;
+}
+
+body .bookmark-off {
+  color: orange;
+}
+
+body .bookmark-on {
+  color: var(--clr-light);
 }
 
 body .title-element {
@@ -1083,7 +1109,7 @@ body .slider .slider-wrapper .next {
 }
 
 body .popular {
-  padding: 60px 0 20px 0;
+  padding: 20px 0 20px 0;
 }
 
 body .popular .row {

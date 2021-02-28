@@ -9,6 +9,7 @@
 @import './menu';
 @import './sign';
 @import './form';
+@import './notification';
 $radius: 5px;
 
 :root {
@@ -33,7 +34,12 @@ body {
     .hide {
         display: none !important;
     }
-
+    .bookmark-off{
+        color:orange;
+    }
+    .bookmark-on{
+        color:var(--clr-light);
+    }
     //END OF GLOBAL SETTINGS 
 
     .title-element {
@@ -210,9 +216,6 @@ body {
 
     //END GLOBAL SETTINGS
 
-
-
-
     .slider {
         height: 400px;
         overflow: hidden;
@@ -249,24 +252,14 @@ body {
         }
     }
 
-
     .popular {
-        padding: 60px 0 20px 0;
+        padding: 20px 0 20px 0;
 
         .row {
             margin: 0;
         }
     }
-
-   
-
-
-
-
 }
-
-
-
 
 @keyframes fadein {
     0% {

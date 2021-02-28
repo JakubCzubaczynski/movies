@@ -20,7 +20,11 @@ const displayWatchList = () => {
     `;
     });
     categorySliderUtils('watchlist');
-  } else
+  } else {
+    $(`.watchlist .next-icon-element`).hide();
+    $(`.watchlist .prev-icon-element`).hide();
+    console.log('chowam');
     wrapper.innerHTML = `<h2 style='text-align:center;width:100%'>Watch List is empty...</h2>`;
+  }
 };
 export default displayWatchList;

@@ -1,6 +1,7 @@
+import displayMovieDetails from './displayMovieDetails.js';
 import displayWatchList from './displayWatchList.js';
 import getData from './getData.js';
-
+import notification from './notification.js';
 const addToWatchList = async (id) => {
   let url = `https://api.themoviedb.org/3/movie/${id}?api_key=25141123a6896a890d381900b61e2af6&language=en-US`;
 
@@ -21,8 +22,8 @@ const addToWatchList = async (id) => {
     }
   } else {
     localStorage.setItem('watchlist', JSON.stringify([data]));
-    console.log('malo');
   }
+  notification('add');
   displayWatchList();
 };
 export default addToWatchList;

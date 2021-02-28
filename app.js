@@ -21,7 +21,7 @@ const initialLoading = async () => {
 
   displayCategorySlider('popular', trending);
   displayCategorySlider('discover', discover);
-
+  displayCategorySlider('top', top);
   displayWatchList();
   displayActors(people);
   displayGenre();
