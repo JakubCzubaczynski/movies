@@ -4,11 +4,10 @@ const displayActorDetails = async (id, element) => {
   const key = '25141123a6896a890d381900b61e2af6';
   const urlPerson = `https://api.themoviedb.org/3/person/${id}?api_key=${key}&language=en-US`;
   const posterPath = `https://image.tmdb.org/t/p/w300_and_h450_bestv2`;
-
   const data = await getData(urlPerson);
+  const newElement = document.querySelector('.details-overlay');
 
   element.innerHTML += `<div class="details-overlay"></div>`;
-  const newElement = document.querySelector('.details-overlay');
   newElement.innerHTML += `
     <div class='details-img-wrapper'>
         <img class='details-img' src='${posterPath}${data.profile_path}'>

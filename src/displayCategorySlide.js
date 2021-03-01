@@ -5,8 +5,8 @@ const displayCategorySlider = async (cond, url) => {
   const key = '25141123a6896a890d381900b61e2af6';
   const data = await getData(url);
   const imagePath = `https://image.tmdb.org/t/p/w220_and_h330_face`;
-
   const wrapper = document.querySelector(`.${cond} .slider-section-wrapper`);
+
 
   data.results.map((item) => {
     wrapper.innerHTML += `

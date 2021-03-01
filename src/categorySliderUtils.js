@@ -7,6 +7,7 @@ const categorySliderUtils = async (cond) => {
   const maxScrollLeft = element.scrollWidth - element.clientWidth;
   console.log(cond, element.scrollWidth);
   console.log(element.clientWidth);
+
   if (element.scrollWidth === element.clientWidth) {
     $(`.${cond} .next-icon-element`).hide();
     $(`.${cond} .prev-icon-element`).hide();
@@ -16,6 +17,7 @@ const categorySliderUtils = async (cond) => {
     $(`.${cond} .prev-icon-element`).show();
     console.log('nie chowam');
   }
+
   $(`.${cond} .next-icon-element`).on('click', function () {
     if (position + 400 < maxScrollLeft && position >= 0) {
       position += 400;

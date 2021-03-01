@@ -5,6 +5,10 @@ const displayGenre = () => {
   const key = '25141123a6896a890d381900b61e2af6';
   let url = '';
   let text = '';
+  const data = await getData(url);
+  const wrapper = document.querySelector(
+    `.single-genre .slider-section-wrapper`
+  );
 
   const displayGenreSlide = async (id) => {
     const imagePath = `https://image.tmdb.org/t/p/w220_and_h330_face`;
@@ -33,13 +37,10 @@ const displayGenre = () => {
         url = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&sort_by=popularity.desc&with_genres=${id}&page=1`;
         text = 'fantasy';
         break;
-    }
-    const data = await getData(url);
-    const wrapper = document.querySelector(
-      `.single-genre .slider-section-wrapper`
-    );
-
-    data.results.map((item) => {
+      }
+      
+      data.results.map((item) => {
+      const container = document.querySelector(`.single-genre.container`);
       wrapper.innerHTML += `
       <div data-id='${item.id}' class="item single-genre">
       <img class="item-img" src='${imagePath + item.poster_path}' alt=''>
@@ -53,11 +54,9 @@ const displayGenre = () => {
       </div>
       `;
 
-      const container = document.querySelector(`.single-genre.container`);
 
       $('.single-genre .section-title').html(text);
       $(`.single-genre`).css('animation', 'fadein 0.5s linear');
-
       $(`.single-genre.container`).removeClass('hide');
       container.scrollIntoView();
     });

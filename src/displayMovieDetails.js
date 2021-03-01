@@ -6,7 +6,7 @@ import removeFromWatchlist from './removeFromWatchlist.js';
 const displayMovieDetails = async (id, element) => {
   const key = '25141123a6896a890d381900b61e2af6';
   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${key}&language=en-US`;
-  console.log(url);
+
   const backgroundPath = `https://image.tmdb.org/t/p/w1920_and_h800_multi_faces`;
   const posterPath = `https://image.tmdb.org/t/p/w600_and_h900_bestv2`;
   const data = await getData(url);
@@ -58,6 +58,7 @@ const displayMovieDetails = async (id, element) => {
     </div>
     `);
   });
+
   document.querySelector('.details-wrapper').scrollIntoView();
 
   $('.details-close').on('click', function () {
@@ -66,16 +67,5 @@ const displayMovieDetails = async (id, element) => {
 
   checkForBookmarks();
   bookmarkUtils();
-  // $('.bookmark-on').on('click', function () {
-  //   $(this).removeClass('bookmark-on');
-  //   $(this).addClass('bookmark-off');
-  //   addToWatchList(id);
-  // });
-  // $('.bookmark-off').on('click', function () {
-  //   console.log('teraz powinno usunac z listy');
-  //   $(this).removeClass('bookmark-off');
-  //   $(this).addClass('bookmark-on');
-  //   removeFromWatchlist(id);
-  // });
 };
 export default displayMovieDetails;
